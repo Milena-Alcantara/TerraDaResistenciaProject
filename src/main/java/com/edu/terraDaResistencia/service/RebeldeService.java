@@ -16,7 +16,7 @@ public class RebeldeService {
     @Autowired
     RebeldeRepository rebeldeRepository;
 
-    public RebeldeModel registerNewRebelde(CreateRebeldeRequest createRebeldeRequest){
+    public RebeldeModel registerNewRebelde( CreateRebeldeRequest createRebeldeRequest){
         RebeldeModel rebeldeModel = new RebeldeModel(createRebeldeRequest.getId(), createRebeldeRequest.getName(),
                 createRebeldeRequest.getLocation(), createRebeldeRequest.getAge(), createRebeldeRequest.isStatusTraitor());
         return rebeldeRepository.save(rebeldeModel);

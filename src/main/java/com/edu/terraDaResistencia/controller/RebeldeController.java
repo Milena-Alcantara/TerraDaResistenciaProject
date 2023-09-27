@@ -1,8 +1,6 @@
 package com.edu.terraDaResistencia.controller;
-
 import com.edu.terraDaResistencia.model.RebeldeModel;
 import com.edu.terraDaResistencia.service.RebeldeService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +12,7 @@ public class RebeldeController {
     RebeldeService rebeldeService;
 
     @PostMapping
-    public RebeldeModel registerNewRebelde(@RequestBody @Valid CreateRebeldeRequest createRebeldeRequest){
+    public RebeldeModel registerNewRebelde(@RequestBody CreateRebeldeRequest createRebeldeRequest){
         return rebeldeService.registerNewRebelde(createRebeldeRequest);
     }
 
