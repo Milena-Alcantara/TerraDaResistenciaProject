@@ -14,7 +14,7 @@ public class TerraDaResistenciaProjectApplication {
 	}
 	@Bean
 	public WebServerFactoryCustomizer<ConfigurableWebServerFactory> webServerFactoryCustomizer() {
-		return factory -> factory.setPort(9090); // Defina a porta desejada aqui
+		return factory -> factory.setPort(9090);
 	}
 
 }

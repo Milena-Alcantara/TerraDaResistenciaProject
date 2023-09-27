@@ -1,5 +1,6 @@
 package com.edu.terraDaResistencia.service;
 
+import com.edu.terraDaResistencia.controller.CreateRebeldeRequest;
 import com.edu.terraDaResistencia.model.RebeldeModel;
 import com.edu.terraDaResistencia.repository.RebeldeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,9 @@ public class RebeldeService {
     @Autowired
     RebeldeRepository rebeldeRepository;
 
-    public RebeldeModel registerNewRebelde(RebeldeModel rebeldeModel){
+    public RebeldeModel registerNewRebelde(CreateRebeldeRequest createRebeldeRequest){
+        RebeldeModel rebeldeModel = new RebeldeModel(createRebeldeRequest.getId(), createRebeldeRequest.getName(),
+                createRebeldeRequest.getLocation(), createRebeldeRequest.getAge(), createRebeldeRequest.isStatusTraitor());
         return rebeldeRepository.save(rebeldeModel);
     }
 
