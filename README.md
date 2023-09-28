@@ -12,9 +12,9 @@ Aqui estão algumas informações básicas sobre nosso projeto.
 O Terra Da Resistência foi estruturado com uma arquitetura em camadas e padrão MVC, isso inclui:
 
 - [**Controller**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/controller): Gerenciam as requisições HTTP e as respostas para as rotas da nossa API.
-- [**Service**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/model): Contém a lógica de negócios e coordena as operações relacionadas às entidades.
+- [**Service**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/service): Contém a lógica de negócios e coordena as operações relacionadas às entidades.
 - [**Repository**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/repository): Responsável pela comunicação com o banco de dados.
-- [**Model**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/service): Representa as entidades do nosso sistema.
+- [**Model**](https://github.com/Milena-Alcantara/TerraDaResistenciaProject/tree/master/src/main/java/com/edu/terraDaResistencia/model): Representa as entidades do nosso sistema.
 
 ## Tecnologias Utilizadas 🚀
 
