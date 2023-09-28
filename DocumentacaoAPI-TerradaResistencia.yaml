@@ -1,0 +1,233 @@
+swagger: "2.0"
+info:
+  title: Terra da Resistência -  APIRest 
+  version: 1.0.0
+  
+paths:
+  api/rebelde:
+    post:
+      sumary: Salva um Rebelde no banco de dados
+      parameters:
+        - name: tb_rebelde
+          in: body
+          required: true
+          schema:
+            type: object
+            properties: 
+              name:
+                type: string
+              age:
+                type: integer
+              location: 
+                type: string
+      responses:
+        201:
+          description: Dados salvo com sucesso!
+          schema:
+            type: object
+            properties: 
+              name:
+                type: string
+              age:
+                type: integer
+              location: 
+                type: string
+                
+  api/rebelde/updateLocation/{id}:
+    put:
+      sumary: Atualiza a localização de um rebelde quando informado seu id
+      parameters: 
+        - in: path
+          name: id
+          required: true
+          schema: 
+            type: integer
+          description: ID do rebelde a ser atualizado.
+      responses:
+        201:
+          description: Localização do rebelde atualizada com sucesso!
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              age:
+                type: integer
+              location:
+                type: string
+              status_traitor: 
+                type: boolean
+        400:
+          description: Rebelde não encontrado.
+        500:
+          description: Erro interno de servidor.
+          
+  api/rebelde/upadateStatus/{id}:
+    put:
+      sumary: Atualiza o status de traidor de um rebelde quando informado seu id depois de três tentativas.
+      parameters: 
+        - in: path
+          name: id
+          required: true
+          schema: 
+            type: integer
+          description: ID do rebelde a ser atualizado.
+      responses:
+        201:
+          description: Status do rebelde atualizada com sucesso!
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              age:
+                type: integer
+              location:
+                type: string
+              status_traitor: 
+                type: boolean
+        400:
+          description: Rebelde não encontrado.
+        500:
+          description: Erro interno de servidor.
+          
+  api/purchasingBase:
+    post:
+      sumary: Adiciona produtos na base de compras
+      parameters:
+        - name: tb_basede_compra
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              item: 
+                type: string
+              value:
+                type: integer
+      responses:
+        200:
+          description: Item adcionado com sucesso!
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              item:
+                type: string
+              value:
+                type: integer
+        400:
+          description: Tabela não encontrada.
+        500:
+          description: Erro interno de servidor.
+    
+    get:
+      sumary: Exibe todos os itens disponíveis na base de compras
+      responses:
+        200:
+          description: Itens localizados com sucesso!
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                item:
+                  type: string
+                value:
+                 type: integer
+    
+  api/inventory:
+    post:
+      sumary: Adiciona items no inventário do Rebelde
+      parameters:
+        - name: tb_inventario
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              item:
+                type: string
+              idRebelde:
+                type: object
+                properties:
+                  id:
+                    type: integer
+      responses:
+        201:
+          description: Item adicionado no invetário com sucesso!
+          schema:
+            type: object
+            properties:
+              id: 
+                type: integer
+              item:
+                type: string
+              idRebelde:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  age:
+                    type: integer
+                  location:
+                    type: string
+                  status_traitor:
+                    type: boolean
+        400:
+          description: Tabela não encontrada.
+        500:
+          description: Erro interno de servidor.  
+          
+  api/inventory/getAll:
+    get:
+      sumary: Mostra todos os inventários e os id dos seus respectivos rebeldes
+      responses:
+        200:
+          description: Inventários localizados com sucesso!
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                item:
+                  type: string
+                idRebelde:
+                  type: object
+                  properties:
+                    id:
+                     type: integer
+                    name:
+                      type: string
+                    age: 
+                      type: integer
+                    location:
+                      type: string
+                    status_traitor:
+                      type: boolean
+                      
+              
+            
+      
+                    
+                
+            
+                
+              
+      
+                
+                
+            
+      
+       
